@@ -50,3 +50,16 @@ php artisan key:generate
 php artisan migrate
 npm install && npm run dev
 php artisan serve
+
+---
+
+## 📸 Screenshots
+
+### 🧾 Dashboard Pemeriksaan
+![Dashboard](screenshots/dashboard.png)
+
+### 📝 Form Input Pemeriksaan
+![Form Input](screenshots/form-input.png)
+
+### 📄 Hasil Export PDF
+![Export PDF](screenshots/export-pdf.png)
