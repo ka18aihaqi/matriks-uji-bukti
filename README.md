@@ -31,7 +31,7 @@ Aplikasi ini ditujukan bagi auditor pemeriksa pajak untuk mempercepat dan merapi
 
 ## ⚙️ Teknologi
 
-- [Laravel 10.x](https://laravel.com/)
+- [Laravel 11.x](https://laravel.com/)
 - [Tailwind CSS](https://tailwindcss.com/) + Blade Template
 - [DOMPDF](https://github.com/dompdf/dompdf) untuk export PDF
 - MySQL / MariaDB
