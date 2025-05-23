@@ -7,6 +7,7 @@ use App\Models\PosUjiOption;
 use Illuminate\Http\Request;
 use App\Models\JenisBuktiOption;
 use App\Models\DokumenSumberOption;
+use Illuminate\Support\Facades\Auth;
 use App\Models\MetodePemeriksaanOption;
 use App\Models\TeknikPemeriksaanOption;
 
@@ -45,7 +46,7 @@ class PemeriksaanController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'nama_wajib_pajak' => 'required',
             'npwp' => 'required',
             'tahun_pajak' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
@@ -63,7 +64,11 @@ class PemeriksaanController extends Controller
             'supervisor' => 'nullable'
         ]);
 
-        Pemeriksaan::create($request->all());
+        // Tambahkan field perekam
+        $validated['perekam'] = Auth::user()->username;
+
+        // Simpan data validasi + perekam
+        Pemeriksaan::create($validated);
 
         return redirect()->route('dashboard')->with('success', 'Data berhasil ditambahkan.');
     }
@@ -114,7 +119,9 @@ class PemeriksaanController extends Controller
             'supervisor'           => 'nullable',
         ]);
 
-        $pemeriksaan->update($request->all());
+        $validated['perekam'] = Auth::user()->username;
+
+        $pemeriksaan->update($validated);
 
         return redirect()->route('dashboard')->with('success', 'Data berhasil diupdate.');
     }

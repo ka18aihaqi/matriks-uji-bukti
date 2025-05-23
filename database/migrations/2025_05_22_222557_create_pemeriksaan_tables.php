@@ -65,6 +65,7 @@ return new class extends Migration
             $table->text('catatan_tambahan')->nullable();
 
             $table->string('supervisor')->nullable();
+            $table->string('perekam')->nullable();
             $table->timestamps();
         });
     }

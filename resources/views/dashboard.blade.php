@@ -84,8 +84,10 @@
                                         <th class="px-1 py-2 text-left text-xs">Dokumen Sumber</th>
                                         <th class="px-1 py-2 text-left text-xs">Metode dan Teknik</th>
 
-                                        <th class="px-1 py-2 text-left text-xs">Perekam</th>
+                                        <th class="px-1 py-2 text-left text-xs">Supervisor</th>
+
                                         <th class="px-1 py-2 text-left text-xs">Tanggal</th>
+                                        <th class="px-1 py-2 text-left text-xs">Perekam</th>
                                         <th class="px-1 py-2 text-center text-xs">Action</th>
                                     </tr>
                                 </thead>
@@ -124,6 +126,7 @@
 
                                         <td class="px-1 py-2 text-left text-xs">{{ $item->supervisor }}</td>
                                         <td class="px-1 py-2 text-left text-xs">{{ $item->updated_at->format('d-m-Y') }}</td>
+                                        <td class="px-1 py-2 text-left text-xs">{{ $item->perekam  }}</td>
                                         <td class="px-1 py-2 text-center text-xs">
                                             <!-- Edit -->
                                             <a href="{{ route('perekaman.edit', $item->id) }}"
