@@ -1,45 +1,52 @@
-<p align="center"> <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo"> </p> <h2 align="center">Matriks Uji Bukti</h2> <p align="center"> Aplikasi pencatatan pemeriksaan pajak berbasis Laravel. </p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="280" alt="Laravel Logo">
+</p>
 
-Tentang Proyek
-Matriks Uji Bukti adalah sistem informasi berbasis Laravel yang dirancang untuk mendokumentasikan proses pemeriksaan pajak, termasuk:
+<h2 align="center">Matriks Uji Bukti</h2>
+<p align="center"><em>Aplikasi pencatatan pemeriksaan pajak berbasis Laravel</em></p>
 
-Rekaman wajib pajak dan nomor SP2
+---
 
-Pos uji, jenis bukti, dan dokumen sumber
+## 📄 Tentang Proyek
 
-Evaluasi bukti hingga kesimpulan dan tindak lanjut
+**Matriks Uji Bukti** adalah aplikasi berbasis Laravel yang digunakan untuk mendokumentasikan proses pemeriksaan pajak secara sistematis dan efisien. Sistem ini mendukung pencatatan:
 
-Aplikasi ini dibangun dengan prinsip minimalis, efisien, dan mudah digunakan oleh auditor pemeriksa pajak.
+- Data wajib pajak dan nomor SP2
+- Pos uji, jenis bukti, dan dokumen sumber
+- Evaluasi bukti, kesimpulan, tindak lanjut, serta catatan tambahan
 
-Fitur Utama
-CRUD Data Pemeriksaan
+Aplikasi ini ditujukan bagi auditor pemeriksa pajak untuk mempercepat dan merapikan proses dokumentasi.
 
-Filter dan pencarian data real-time
+---
 
-Ekspor PDF matriks uji bukti
+## 🚀 Fitur Utama
 
-Autentikasi pengguna dengan username 9 digit
+- ✅ CRUD data pemeriksaan lengkap
+- 🔍 Filter dan pencarian real-time
+- 📄 Ekspor laporan PDF Matriks Uji Bukti
+- 🔐 Autentikasi pengguna berbasis username 9 digit
+- ⚙️ Validasi form otomatis dengan umpan balik instan
 
-Validasi form otomatis dengan feedback visual
+---
 
-Teknologi
-Laravel 10.x
+## ⚙️ Teknologi
 
-Tailwind CSS + Blade Template
+- [Laravel 10.x](https://laravel.com/)
+- [Tailwind CSS](https://tailwindcss.com/) + Blade Template
+- [DOMPDF](https://github.com/dompdf/dompdf) untuk export PDF
+- MySQL / MariaDB
 
-DOMPDF untuk PDF Export
+---
 
-MySQL / MariaDB
+## 🛠️ Instalasi
 
-Instalasi
+```bash
 git clone https://github.com/ka18aihaqi/matriks-uji-bukti.git
 cd matriks-uji-bukti
 composer install
 cp .env.example .env
 php artisan key:generate
-# konfigurasi database di .env
+# Edit konfigurasi database di file .env
 php artisan migrate
 npm install && npm run dev
 php artisan serve
-
-Screenshots
