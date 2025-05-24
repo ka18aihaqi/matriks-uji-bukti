@@ -10,16 +10,17 @@
             <x-input-label for="username" :value="__('Username')" />
             <x-text-input id="username"
                         class="block mt-1 w-full"
-                        type="number"
+                        type="text"
                         name="username"
                         :value="old('username')"
                         required
-                        maxlength="9"
+                        inputmode="numeric"
                         pattern="\d{9}"
+                        maxlength="9"
                         title="Masukkan 9 digit angka"
                         autofocus
-                        autocomplete="username" 
-                        placeholder="Masukkan NIP"/>
+                        autocomplete="username"
+                        placeholder="Enter your NIP (9 digits)"/>
             <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
 
@@ -30,7 +31,8 @@
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
-                            required autocomplete="current-password" />
+                            required autocomplete="current-password"
+                            placeholder="Enter your password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>

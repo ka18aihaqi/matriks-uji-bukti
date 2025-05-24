@@ -93,3 +93,11 @@ if (filterInput) {
         }, delay);
     });
 }
+
+// Only Number
+document.addEventListener('DOMContentLoaded', function () {
+    const usernameInput = document.getElementById('username');
+    usernameInput.addEventListener('input', function () {
+        this.value = this.value.replace(/\D/g, '').slice(0, 9); // hanya digit, maksimal 9 angka
+    });
+});

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Pemeriksaan') }}
+            {{ __('Edit Perekaman Surat') }}
         </h2>
     </x-slot>
 
@@ -70,6 +70,17 @@
                             </select>
                         </div>
 
+                        <!-- Temuan Pemeriksaan -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="temuan_pemeriksaan" id="temuan_pemeriksaan" placeholder=" "
+                                value="{{ old('temuan_pemeriksaan', $pemeriksaan->temuan_pemeriksaan) }}"
+                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600" />
+                            <label for="temuan_pemeriksaan"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600">
+                                Temuan Pemeriksaan
+                            </label>
+                        </div>
+
                         <!-- Jenis Bukti -->
                         <div class="lg:col-span-1">
                             <label for="jenis_bukti_id" class="block mb-1 text-sm font-medium text-gray-700">Jenis Bukti</label>
@@ -114,21 +125,49 @@
                             </select>
                         </div>
 
-                        <!-- Temuan Pemeriksaan, Evaluasi Bukti, Kesimpulan, Tindak Lanjut, Catatan Tambahan -->
-                        @foreach ([
-                            'temuan_pemeriksaan' => 'Temuan Pemeriksaan',
-                            'evaluasi_bukti' => 'Evaluasi Bukti',
-                            'kesimpulan' => 'Kesimpulan',
-                            'tindak_lanjut' => 'Tindak Lanjut',
-                            'catatan_tambahan' => 'Catatan Tambahan'
-                        ] as $name => $label)
-                            <div class="relative z-0 w-full group">
-                                <input type="text" name="{{ $name }}" id="{{ $name }}" placeholder=" "
-                                    value="{{ old($name, $pemeriksaan->$name) }}"
-                                    class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600" />
-                                <label for="{{ $name }}" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600">{{ $label }}</label>
-                            </div>
-                        @endforeach
+                        <!-- Evaluasi Bukti -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="evaluasi_bukti" id="evaluasi_bukti" placeholder=" "
+                                value="{{ old('evaluasi_bukti', $pemeriksaan->evaluasi_bukti) }}"
+                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600" />
+                            <label for="evaluasi_bukti"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600">
+                                Evaluasi Bukti
+                            </label>
+                        </div>
+
+                        <!-- Kesimpulan -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="kesimpulan" id="kesimpulan" placeholder=" "
+                                value="{{ old('kesimpulan', $pemeriksaan->kesimpulan) }}"
+                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600" />
+                            <label for="kesimpulan"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600">
+                                Kesimpulan
+                            </label>
+                        </div>
+
+                        <!-- Tindak Lanjut -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="tindak_lanjut" id="tindak_lanjut" placeholder=" "
+                                value="{{ old('tindak_lanjut', $pemeriksaan->tindak_lanjut) }}"
+                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600" />
+                            <label for="tindak_lanjut"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600">
+                                Tindak Lanjut
+                            </label>
+                        </div>
+
+                        <!-- Catatan Tambahan -->
+                        <div class="relative z-0 w-full group">
+                            <input type="text" name="catatan_tambahan" id="catatan_tambahan" placeholder=" "
+                                value="{{ old('catatan_tambahan', $pemeriksaan->catatan_tambahan) }}"
+                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600" />
+                            <label for="catatan_tambahan"
+                                class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600">
+                                Catatan Tambahan
+                            </label>
+                        </div>
 
                         <!-- Supervisor -->
                         <div class="relative z-0 w-full group">
