@@ -38,6 +38,17 @@ Aplikasi ini ditujukan bagi auditor pemeriksa pajak untuk mempercepat dan merapi
 
 ---
 
+## 📸 Screenshots
+
+### 🧾 Dashboard Pemeriksaan
+![Dashboard](screenshots/dashboard.png)
+
+### 📝 Form Input Pemeriksaan
+![Form Input](screenshots/form-input.png)
+
+### 📄 Hasil Export PDF
+![Export PDF](screenshots/export-pdf.png)
+
 ## 🛠️ Instalasi
 
 ```bash
@@ -50,3 +61,5 @@ php artisan key:generate
 php artisan migrate
 npm install && npm run dev
 php artisan serve
+
+
