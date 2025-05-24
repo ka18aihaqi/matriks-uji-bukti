@@ -101,3 +101,50 @@ document.addEventListener('DOMContentLoaded', function () {
         this.value = this.value.replace(/\D/g, '').slice(0, 9); // hanya digit, maksimal 9 angka
     });
 });
+
+
+// Submit Delete dan Export
+document.addEventListener("DOMContentLoaded", function () {
+    function submitBulkAction(action) {
+        const form = document.querySelector('#bulkActionForm');
+        const checkboxes = document.querySelectorAll('.row-checkbox:checked');
+
+        // Hapus input lama
+        form.querySelectorAll('input[name="ids[]"]').forEach(el => el.remove());
+
+        if (checkboxes.length === 0) {
+            alert("Pilih minimal satu data terlebih dahulu.");
+            return;
+        }
+
+        // Tambah input tersembunyi untuk masing-masing checkbox
+        checkboxes.forEach(cb => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'ids[]';
+            input.value = cb.value;
+            form.appendChild(input);
+        });
+
+        // Tambahkan action
+        const actionInput = document.createElement('input');
+        actionInput.type = 'hidden';
+        actionInput.name = 'action';
+        actionInput.value = action;
+        form.appendChild(actionInput);
+
+        form.submit();
+    }
+
+    window.submitBulkAction = submitBulkAction;
+
+    // Auto-enable tombol
+    // const checkboxes = document.querySelectorAll('.row-checkbox');
+    // checkboxes.forEach(cb => {
+    //     cb.addEventListener('change', () => {
+    //         const anyChecked = document.querySelectorAll('.row-checkbox:checked').length > 0;
+    //         document.getElementById('deleteBtn').disabled = !anyChecked;
+    //         document.getElementById('exportBtn').disabled = !anyChecked;
+    //     });
+    // });
+});

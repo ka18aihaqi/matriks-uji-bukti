@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/perekaman/{pemeriksaan}', [PemeriksaanController::class, 'show'])->name('perekaman.show');
     Route::get('/perekaman/edit/{pemeriksaan}', [PemeriksaanController::class, 'edit'])->name('perekaman.edit');
     Route::put('/perekaman/{pemeriksaan}', [PemeriksaanController::class, 'update'])->name('perekaman.update');
-    Route::post('/perekaman/{pemeriksaan}', [PemeriksaanController::class, 'destroy'])->name('perekaman.destroy');
+    Route::delete('/perekaman/{pemeriksaan}', [PemeriksaanController::class, 'destroy'])->name('perekaman.destroy');
 });
 
 require __DIR__.'/auth.php';
